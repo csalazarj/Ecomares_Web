@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3>Nueva Categoria</h3>
+                <div class="card-body">
+                    <form action="/categories/add" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Nombre de la categoria" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Ingrese imágen de la categoria</label>
+                            <input type="file" class="form-control-file" name="img_file_category" id="exampleFormControlFile1">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" placeholder="Descripción" rows="20"
+                                id="description_form_article" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block">
+                                Agregar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

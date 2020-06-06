@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3>Editar Miembro</h3>
+            </div>
+
+            <div class="card-body">
+                <img src="{{member.image}}" class="card-img-top  w-25 " alt="...">
+                <form action="/members/edit/{{member._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Ingrese imagen portada</label>
+                        <input type="file" class="form-control-file" name="img_file_member"
+                            id="exampleFormControlFile1">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" value="{{member.name}}" autofocus required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="id_card" class="form-control"
+                            placeholder="Cédula o Documento de Identifcación" value="{{member.id_card}}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="positions" class="form-control" placeholder="Posición en la que juega"
+                            value="{{member.positions}}" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="alias" class="form-control" placeholder="Alias" value="{{member.alias}}">
+                    </div>
+
+                    {{!-- <div class="form-group">
+                        <input type="text" name="role" class="form-control" placeholder="Role" value="{{member.role}}">
+                    </div> --}}
+
+                    <div class="form-group">
+                        <h4 class="my-3">Role</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="role" id="exampleRadios1"
+                                value="jugador">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Jugador
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="role" id="exampleRadios2"
+                                value="entrenador">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Entrenador
+                            </label>
+                        </div>
+                        </div>
+
+                    <div class="form-group">
+                        <h4 class="my-3">Categoria</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="current_category" id="exampleRadios1"
+                                value="Élite Masculino">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Élite Masculino
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="current_category" id="exampleRadios2"
+                                value="Élite Fememina">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Élite Fememina
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="current_category" id="exampleRadios1"
+                                value="Ascenso">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Ascenso
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="current_category" id="exampleRadios2"
+                                value="Iniciación">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Iniciación
+                            </label>
+                        </div>
+                    </div>
+
+                    {{!-- <div class="form-group">
+                        <input type="text" name="current_category" class="form-control" placeholder="Categoria"
+                            value="{{member.current_category}}">
+                    </div> --}}
+
+                    <div class="form-group">
+                        <textarea name="archievements" class="form-control" rows="10"
+                            placeholder="Logros deportivos obtenidos" required>{{member.archievements}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

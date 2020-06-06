@@ -1,0 +1,29 @@
+<article class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow">
+            <div class="card-header">
+                Registro de Administador
+            </div>
+            <div class="card-body">
+                <img src="/images/user-icon.png" alt="imagen log in" class="rounded-circle mx-auto d-block m-4"
+                    style="width: 25%;">
+                <form action="/admin/signup" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password"
+                            placeholder="Confirme Contraseña">
+                    </div>
+                    <button class="btn btn-primary btn-block">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>

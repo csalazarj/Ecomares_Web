@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3>Editar Categoria</h3>
+            </div>
+
+            <div class="card-body">
+                <img src="{{category.images}}" class="card-img-top  w-25 " alt="...">
+                <form action="/categories/edit/{{category._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Ingrese imagen portada</label>
+                        <input type="file" class="form-control-file" name="img_file_category" id="exampleFormControlFile1">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" value="{{category.name}}" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control" rows="10" required>{{category.description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<!--NAVBAR-->
+
+<nav class="navbar navbar-light navbar-expand-md fixed-top bg-third border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img width="70" id="logo-navbar" src="/images/logo_ecomares.png"
+                alt="logo-portafolio"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#principal-menu"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="principal-menu">
+            <ul class="navbar-nav ml-auto text-center text-capitalize text-secondary">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/members">Miembros</a>
+                </li>
+
+                {{!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/categories" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{#each categories}}
+                        <a class="dropdown-item text-capitalize border-bottom" href="/categories/{{_id}}">{{name}}</a>
+                        {{/each}}
+                    </div>
+                </li> --}}
+
+                {{!-- <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li> --}}
+                {{!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="../contact-us">Contactenos</a>
+                </li> --}}
+            </ul>
+            <ul class="navbar-nav text-center text-capitalize text-secondary">
+                {{#if user}}
+                <li class="nav-item dropdown dropleft">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" data-target="#menuAdmin" aria-haspopup="true" aria-expanded="false">
+                        <img src="/images/user-icon.png" alt="admin" width="30">
+                    </a>
+                    <div class="dropdown-menu" id="menuAdmin" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/categories/add">Agregar Categoria</a>
+                        <a class="dropdown-item" href="/members/add">Agregar Miembro</a>
+                        <div class="dropdown-divider"></div> 
+                        {{!-- <a class="dropdown-item" href="/users/add-service">Agregar Servicio</a>
+                        <a class="dropdown-item" href="/users/index-admin">Editar Servicio</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/users/add-employee">Agregar Empleado</a>
+                        <a class="dropdown-item" href="/users/about-us-admin">Editar Sección Nosotros</a>
+                        <div class="dropdown-divider"></div> --}}
+                        <a class="dropdown-item" href="/admin/signup">Registrar Administrador</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/admin/logout">Cerrar Sesión</a>
+                    </div>
+                </li>
+
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/signin">Inciar Sesión</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,21 @@
+{{#if error}}
+<div class="alert alert-danger alet-dismissible fade show w-50 mx-auto text-center mt-3" role="alert">
+    <h5>
+        {{error}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </h5>
+</div>
+{{/if}}
+
+{{#each errors}}
+<div class="alert alert-danger alet-dismissible fade show  w-50 mx-auto text-center mt-3" role="alert">
+    <h5>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </h5>
+    {{text}}
+</div>
+{{/each}}
