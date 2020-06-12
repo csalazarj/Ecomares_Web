@@ -1,0 +1,53 @@
+<div class="row mt-3">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header">
+                <h3 class="text-center bg-primary text-secondary p-4">Editar Uniforme</h3>
+                <div class="card-body">
+                    <img src="{{uniform.image}}" class="card-img-top  w-25 " alt="...">
+
+                    <form action="/uniforms/edit/{{uniform._id}}?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="_method" value="PUT">
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Ingrese imagen del uniforme</label>
+                            <input type="file" class="form-control-file" name="img_file_uniform"
+                                id="exampleFormControlFile1" value="{{uniform.image}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="gender" class="form-control" placeholder="Género"
+                                value="{{uniform.gender}}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="season" class="form-control" placeholder="Temporada"
+                                value="{{uniform.season}}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="form" class="form-control" placeholder="Fomulario"
+                                value="{{uniform.form}}" required>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-date-input" class="col-2 col-form-label">Fecha Limite de Pedido</label>
+                            <div class="col-10">
+                                <input class="form-control" type="date" id="example-date-input" name="limit_date"
+                                    value="{{uniform.limit_date}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" placeholder="Descripción" rows="8"
+                                id="description_form_uniform" class="form-control">{{uniform.description}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block">
+                                Editar Uniforme
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

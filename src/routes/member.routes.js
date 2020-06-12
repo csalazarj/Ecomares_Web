@@ -18,7 +18,7 @@ const {
   createNewMember,
   renderEditMembersForm,
   updateMember,
-  deleteMember
+  deleteMember,
 } = require("../controllers/member.controller");
 
 // render Members
@@ -41,6 +41,6 @@ router.put(
 );
 
 // Delete Member
-router.delete("/members/delete/:id", deleteMember)
+router.delete("/members/delete/:id", deleteMember);
 
 module.exports = router;

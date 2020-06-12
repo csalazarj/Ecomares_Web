@@ -1,0 +1,34 @@
+<div class="row">
+    <div class=" col-12 justify-content-center bg-primary">
+        <h1 class="text-center text-white display-4 font-weight-bold">Uniformes</h1>
+    </div>
+</div>
+<div class="container ">
+    <div class="row ">
+        {{#each uniforms}}
+        <div class="col-md-6 my-3">
+            <div class="card">
+                <img src="{{image}}" class="card-img-top" alt="">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-primary">{{gender}}</h2>
+                    <p class="card-text">{{date}}</p>
+                    <span class="text-primary h4">Temporada:</span>
+                    <p class="card-text">{{season}}</p>
+                    <span class="text-primary h4">Descripción:</span>
+                    <p class="card-text spacing-text"> {{description}}</p>
+
+                    <a href="{{form}}" class="btn btn-primary">Hacer Pedido</a>
+                    <form action="/uniforms/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2 mt-3">
+                        <input type="hidden" name="__method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-md ">Borrar</button>
+                    </form>
+
+                    <a class="d-flex align-self-center" href="/uniforms/edit/{{_id}}"><i
+                            class="fas fa-pencil-alt text-primary mx-2"></i></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>

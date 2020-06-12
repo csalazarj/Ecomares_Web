@@ -3,35 +3,49 @@
         <h1 class="text-center text-white display-4 font-weight-bold">Integrantes</h1>
     </div>
 </div>
-<div class="container">
-    {{#each members}}
-    <div class="row justify-content-center my-3 shadow">
-        <div class="col-lg-4 py-3 d-flex align-items-center">
-            <img src="{{image}}" class="mx-auto img-thumbnail img-fluid w-75" alt="{{alias}}">
-        </div>
-        <div class="col-lg-4 py-4">
-            <h4 class="my-2 text-uppercase font-weight-bold text-primary text-center">Perfil</h4>
-            <p><span class="text-uppercase font-weight-bold text-primary">Nombre: </span>{{name}}</p>
-            <p><span class="text-uppercase font-weight-bold text-primary">Alias: </span>{{alias}}</p>
-            <p><span class="text-uppercase font-weight-bold text-primary">Posición: </span>{{positions}}</p>
-            <p><span class="text-uppercase font-weight-bold text-primary">Rol: </span> {{role}}</p>
-            <p><span class="text-uppercase font-weight-bold text-primary">Categoria: </span>
-                {{current_category}}</p>
-        </div>
-        <div class="col-lg-4 py-4">
+<div class="container-fluid">
+    <div class="row">
+        {{#each members}}
+        <div class="col-lg-3 justify-content-center p-1 border">
+            <div class="col py-3 d-flex align-items-center ">
+                <img src="{{image}}" class="mx-auto img-thumbnail img-fluid w-50" alt="{{alias}}">
+            </div>
+            <div class="col py-4 font-weight-bold">
+                <h4 class="my-2 text-uppercase text-primary text-center">Perfil</h4>
+                <p><span class="text-uppercase text-primary">Nombre: </span>{{name}}</p>
+                <p><span class="text-uppercase text-primary">Alias: </span>{{alias}}</p>
+                <p><span class="text-uppercase text-primary">Posición: </span>{{positions}}</p>
+                <p><span class="text-uppercase text-primary">Rol: </span> {{role}}</p>
+                <p><span class="text-uppercase text-primary">Categoria: </span>
+                    {{current_category}}</p>
+                <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#palmares_{{alias}}" role="button"
+                        aria-expanded="false" aria-controls="palmares">
+                        Palmarés
+                    </a>
+                </p>
+                <div class="collapse" id="palmares_{{alias}}">
+                    <div class="card card-body spacing-text">
+                        {{archievements}}
+                    </div>
+                </div>
+            </div>
+            {{!-- <div class="col-lg-4 py-4">
             <h4 class="text-uppercase font-weight-bold text-primary text-center">Palmarés</h4>
             <p class="spacing-text">{{archievements}}</p>
+        </div> --}}
+
+            <div class="col-6 ml-auto p-3 d-flex justify-content-end">
+                <form action="/members/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2 mt-3">
+                    <input type="hidden" name="__method" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-md ">Borrar</button>
+                </form>
+
+                <a class="d-flex align-self-center" href="/members/edit/{{_id}}"><i
+                        class="fas fa-pencil-alt text-primary mx-2"></i></a>
+            </div>
         </div>
 
-        <div class="col-6 ml-auto p-3 d-flex justify-content-end">
-            <form action="/members/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2 mt-3">
-                <input type="hidden" name="__method" value="DELETE">
-                <button type="submit" class="btn btn-danger btn-md ">Borrar</button>
-            </form>
-
-            <a class="d-flex align-self-center" href="/members/edit/{{_id}}"><i
-                    class="fas fa-pencil-alt text-primary mx-2"></i></a>
-        </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>

@@ -11,22 +11,6 @@ memberCtrl.renderMembers = async (req, res) => {
   }
 };
 
-// memberCtrl.renderEliteMascMembers = async (req, res) => {
-//   try {
-//     const categoryId = await Category.findById("5ed735af77cf7a46ec0d9907");
-//     const members = await Member.find({
-//       current_category: "elite_masc",
-//     })
-//       .lean()
-//       .exec(function (err, members) {
-//         if (err) return err.message;
-//         console.log("hola");
-//       });
-//     res.redirect("/categories/5ed735af77cf7a46ec0d9907", { members });
-//   } catch (error) {
-//     res.send({ status: "ERROR", message: error.message });
-//   }
-// };
 
 memberCtrl.renderMembersForm = async (req, res) => {
   try {
@@ -88,7 +72,6 @@ memberCtrl.renderEditMembersForm = async (req, res) => {
   try {
     const categories = await Category.find().lean();
     const member = await Member.findById(req.params.id).lean();
-    console.log(member)
     res.render("members/edit-member", { categories, member });
   } catch (error) {
     res.send({ status: "ERROR", message: error.message });
