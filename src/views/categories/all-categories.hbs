@@ -17,6 +17,8 @@
             <form action="/categories/c/{{_id}}" method="GET" class="mx-auto">
                 <button type="submit" class="btn btn-secondary btn-md ">Ver más</button>
             </form>
+
+            {{#if ../user}}
             <div class="d-flex justify-content-end">
 
                 <form action="/categories/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2">
@@ -27,7 +29,7 @@
                 <a class="d-flex" href="/categories/edit/{{_id}}"><i
                         class="fas fa-pencil-alt text-primary mx-2"></i></a>
             </div>
-
+            {{/if}}
         </div>
     </article>
     {{/each}}

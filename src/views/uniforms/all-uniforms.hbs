@@ -18,6 +18,8 @@
                     <p class="card-text spacing-text"> {{description}}</p>
 
                     <a href="{{form}}" class="btn btn-primary">Hacer Pedido</a>
+                    {{#if ../user}}
+
                     <form action="/uniforms/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2 mt-3">
                         <input type="hidden" name="__method" value="DELETE">
                         <button type="submit" class="btn btn-danger btn-md ">Borrar</button>
@@ -25,6 +27,8 @@
 
                     <a class="d-flex align-self-center" href="/uniforms/edit/{{_id}}"><i
                             class="fas fa-pencil-alt text-primary mx-2"></i></a>
+                    {{/if}}
+
                 </div>
             </div>
         </div>

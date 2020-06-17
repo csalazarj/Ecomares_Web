@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-10  py-3 d-flex align-items-stretch ">
         <div class="card">
-            <h1 class="card-title text-center">
+            <h1 class="card-title text-center text-white bg-primary py-4">
                 {{category.name}}
             </h1>
             <img src="{{category.images}}" class="card-img-top w-50 mx-auto py-5" alt="...">
@@ -13,18 +13,22 @@
 </div>
 
 <div class="row justify-content-center">
-    <div class="col-12 bg-primary py-5">
+    <div class="col-12 bg-primary py-2">
         <h2 class="text-center text-white display-4">Integrantes</h2>
     </div>
-    {{#each members}}
-    <div class="col-md-4 col-lg-3 py-3 d-flex align-items-stretch justify-content-around">
-        <div class="card shadow" style="width: 18rem;">
-            <img src="{{image}}" class="card-img-top" alt="{{alias}}">
-            <div class="card-body">
-                <h3 class="card-text text-center text-primary">{{name}}</h3>
+    {{#if members}}
+        {{#each members}}
+        <div class="col-md-4 col-lg-3 py-3 d-flex align-items-stretch justify-content-around">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="{{image}}" class="card-img-top" alt="{{alias}}">
+                <div class="card-body">
+                    <h3 class="card-text text-center text-primary">{{name}}</h3>
+                </div>
             </div>
         </div>
-    </div>
-    {{/each}}
+        {{/each}}
+        {{else}}
+        <h2 class="text-primary py-5 text-center">No hay miembros aun</h2>
+    {{/if}}
 
 </div>

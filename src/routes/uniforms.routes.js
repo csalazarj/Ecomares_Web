@@ -21,24 +21,28 @@ const {
   deleteUniform,
 } = require("../controllers/uniforms.controller");
 
+const { isAutenticated } = require("../helpers/auth");
+
 router.get("/uniforms", renderUniforms);
 
 // Create/add Uniform
-router.get("/uniforms/add", renderUniformForm);
+router.get("/uniforms/add", isAutenticated, renderUniformForm);
 router.post(
   "/uniforms/add",
+  isAutenticated,
   uploadUniform.single("img_file_uniform"),
   createNewUniform
 );
 
 // Update/edit uniform
-router.get("/uniforms/edit/:id", renderEditUniformsForm);
+router.get("/uniforms/edit/:id", isAutenticated, renderEditUniformsForm);
 router.put(
   "/uniforms/edit/:id",
+  isAutenticated,
   uploadUniform.single("img_file_uniform"),
   updateUniform
 );
 
-router.delete("/uniforms/delete/:id", deleteUniform);
+router.delete("/uniforms/delete/:id", isAutenticated, deleteUniform);
 
 module.exports = router;
