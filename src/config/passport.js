@@ -1,6 +1,6 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const Admin = require("../models/Admin");
+const User = require("../models/User");
 
 passport.use(
   new LocalStrategy(
@@ -10,7 +10,7 @@ passport.use(
     },
     async (email, password, done) => {
       // Match email´s user
-      const user = await Admin.findOne({ email });
+      const user = await User.findOne({ email });
       if (!user) {
         return done(null, false, { message: "Usuario no encontrado" });
       } else {
@@ -31,7 +31,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  Admin.findById(id, (err, user) => {
+  User.findById(id, (err, user) => {
     done(null, user);
   });
 });

@@ -44,8 +44,26 @@
                 </li> --}}
             </ul>
             <ul class="navbar-nav text-center text-capitalize text-secondary">
+                
+
                 {{#if user}}
-                <li class="nav-item dropdown dropleft">
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout">Cerrar Sesión</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/signin">Inciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/signup">Regístrate</a>
+                </li>
+                {{/if}}
+
+                {{#if_equal user.role 'admin'}}
+                <li class="nav-item dropdown dropleft ">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" data-target="#menuAdmin" aria-haspopup="true" aria-expanded="false">
                         <img src="/images/user-icon.png" alt="admin" width="30">
@@ -54,24 +72,21 @@
                         <a class="dropdown-item" href="/categories/add">Agregar Categoria</a>
                         <a class="dropdown-item" href="/members/add">Agregar Miembro</a>
                         <a class="dropdown-item" href="/uniforms/add">Agregar Uniforme</a>
-                        <div class="dropdown-divider"></div> 
-                        {{!-- <a class="dropdown-item" href="/users/add-service">Agregar Servicio</a>
-                        <a class="dropdown-item" href="/users/index-admin">Editar Servicio</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/users/add-employee">Agregar Empleado</a>
-                        <a class="dropdown-item" href="/users/about-us-admin">Editar Sección Nosotros</a>
-                        <div class="dropdown-divider"></div> --}}
-                        <a class="dropdown-item" href="/admin/signup">Registrar Administrador</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/admin/logout">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="/user/signup">Registrar Usuario</a>
+                        {{!-- <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/logout">Cerrar Sesión</a> --}}
                     </div>
                 </li>
 
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/signin">Inciar Sesión</a>
+                {{!-- {{else}} --}}
+                {{!-- <li class="nav-item">
+                    <a class="nav-link" href="/user/signin">Inciar Sesión</a>
                 </li>
-                {{/if}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/signup">Regístrate</a>
+                </li> --}}
+                {{/if_equal}}
             </ul>
         </div>
     </div>

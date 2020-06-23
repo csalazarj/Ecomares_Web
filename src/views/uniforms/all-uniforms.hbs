@@ -17,8 +17,8 @@
                     <span class="text-primary h4">Descripción:</span>
                     <p class="card-text spacing-text"> {{description}}</p>
 
-                    <a href="{{form}}" class="btn btn-primary">Hacer Pedido</a>
-                    {{#if ../user}}
+                    <a href="{{form}}" class="btn btn-primary" target="_blank">Hacer Pedido</a>
+                    {{#if_equal ../user.role 'admin'}}
 
                     <form action="/uniforms/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2 mt-3">
                         <input type="hidden" name="__method" value="DELETE">
@@ -27,7 +27,7 @@
 
                     <a class="d-flex align-self-center" href="/uniforms/edit/{{_id}}"><i
                             class="fas fa-pencil-alt text-primary mx-2"></i></a>
-                    {{/if}}
+                    {{/if_equal}}
 
                 </div>
             </div>
