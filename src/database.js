@@ -10,7 +10,7 @@ const {
 const MONGODB_URI = ECOMARESWEB_APP_MONGODB_ATLAS;
 
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(ECOMARESWEB_APP_MONGODB_ATLAS, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
