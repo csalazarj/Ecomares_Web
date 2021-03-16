@@ -1,0 +1,53 @@
+<div class="row py-3">
+    <div class=" col-12 justify-content-center bg-white ">
+        <h1 class="text-center text-primary display-4 fw-bold text-uppercase">Categorías</h1>
+        <p class="text-center text-primary p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea a tenetur
+            ipsam quisquam doloribus iste
+            soluta doloremque repellendus repudiandae.</p>
+    </div>
+</div>
+<div>
+    {{#each categories}}
+    {{#if position}}
+    <div class="col-12 bg-primary" style="height: 5rem;">
+        
+        <h2 class="category-name-left">{{name}}</h2>
+    </div>
+    {{else}}
+    <div class="col-12 bg-primary" style="height: 5rem;">
+        <h2 class="category-name-right" >{{name}}</h2>
+    </div>
+    {{/if}}
+
+    <article class="row">
+        {{#if position}}
+            <div class="col-lg-6 mb-md-0">
+        {{else}}
+            <div class="col-lg-6 mb-md-0 order-lg-1">
+        {{/if}}
+                <img src="{{images}}" class="img-fluid" alt="{{name}}">
+            </div>
+            <div class="col-lg-6 p-5 pl-lg-1 ">
+
+                <p class="spacing-text text-justify p-3">{{description}}</p>
+                <form action="/categories/c/{{_id}}" method="GET" class="mx-auto">
+                    <button type="submit" class="btn-category btn-category--1 d-block mx-auto">Ver más</button>
+                </form>
+
+                {{#if_equal ../user.role 'admin'}}
+                <div class="d-flex justify-content-end">
+
+                    <form action="/categories/delete/{{_id}}?_method=DELETE" method="POST" class="mx-2">
+                        <input type="hidden" name="__method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-md">Borrar</button>
+                    </form>
+
+                    <a class="d-flex" href="/categories/edit/{{_id}}"><i
+                            class="fas fa-pencil-alt text-primary mx-2"></i></a>
+                </div>
+                {{/if_equal}}
+            </div>
+    </article>
+    {{/each}}
+
+</div>

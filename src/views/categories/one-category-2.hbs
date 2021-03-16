@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col py-3">
+
+        <h1 class="text-center text-primary pt-4 fw-bolder text-uppercase fs-1">
+            {{category.name}}
+        </h1>
+        <div class="p-4 ">
+            <img src="{{category.images}}" class="mx-auto w-75 d-block" alt="...">
+        </div>
+        <p class="spacing-text p-5">{{category.description}}</p>
+
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 bg-primary py-4">
+        <h2 class="text-center text-white text-uppercase fs-2">jugadores</h2>
+    </div>
+    {{#if members}}
+    <div class="d-flex justify-content-center my-5">
+        <a href="#section_porteros"><button class="btn-category btn-category--1">porteros</button></a>
+        <a href="#section_defensas"><button class="btn-category btn-category--1">defensas</button></a>
+        <a href="#section_medios"><button class="btn-category btn-category--1">medios</button></a>
+    </div>
+    <h2 id="section_porteros" class="text-center text-uppercase text-primary pt-5 fw-bold">Porteros</h2>
+    {{#each members}}
+    {{#if_equal this.positions 'Portero'}}
+    <div class="col py-3">
+        <div class="container-member">
+
+            <div class="shadow box-member">
+                <div class="image-member">
+                    <img src="{{image}}" class="card-img-top ic" alt="{{alias}}">
+                </div>
+                <div class="content-member-right">
+                    <h3 class="text-primary">Torneos</h3>
+                    <p class="fs-3">4</p>
+                    <h3 class="text-primary">Debut</h3>
+                    <p>15/10/2016</p>
+                </div>
+                <div class="content-member-down">
+                    <h3 class="text-primary">#{{number}} {{name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if_equal}}
+    {{/each}}
+
+
+    <h2 id="section_defensas" class="text-center text-uppercase text-primary pt-5 fw-bold">Defensas</h2>
+    {{#each members}}
+    {{#if_equal this.positions 'Defensa'}}
+    <div class="col py-3">
+        <div class="container-member">
+
+            <div class="shadow box-member">
+                <div class="image-member">
+                    <img src="{{image}}" class="card-img-top ic" alt="{{alias}}">
+                </div>
+                <div class="content-member-right">
+                    <h3 class="text-primary">Torneos</h3>
+                    <p class="fs-3">4</p>
+                    <h3 class="text-primary">Debut</h3>
+                    <p>15/10/2016</p>
+                </div>
+                <div class="content-member-down">
+                    <h3 class="text-primary">#{{number}} {{name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if_equal}}
+    {{/each}}
+
+
+    <h2 id="section_medios" class="text-center text-uppercase text-primary pt-5 fw-bold">Medios</h2>
+    {{#each members}}
+    {{#if_equal this.positions 'Medio'}}
+    <div class="col py-3">
+        <div class="container-member">
+
+            <div class="shadow box-member">
+                <div class="image-member">
+                    <img src="{{image}}" class="card-img-top ic" alt="{{alias}}">
+                </div>
+                <div class="content-member-right">
+                    <h3 class="text-primary">Torneos</h3>
+                    <p class="fs-3">4</p>
+                    <h3 class="text-primary">Debut</h3>
+                    <p>15/10/2016</p>
+                </div>
+                <div class="content-member-down">
+                    <h3 class="text-primary">#{{number}} {{name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if_equal}}
+    {{/each}}
+    {{else}}
+    <h2 class="text-primary py-5 text-center">No hay miembros aun</h2>
+    {{/if}}
+
+</div>

@@ -25,6 +25,7 @@ memberCtrl.createNewMember = async (req, res) => {
   try {
     const {
       name,
+      number,
       id_card,
       birthdate,
       alias,
@@ -38,6 +39,7 @@ memberCtrl.createNewMember = async (req, res) => {
       var image = "/images/members/" + name_file;
       const newMember = new Member({
         name,
+        number,
         id_card,
         birthdate,
         alias,
@@ -51,6 +53,7 @@ memberCtrl.createNewMember = async (req, res) => {
     } else {
       const newMember = new Member({
         name,
+        number,
         id_card,
         birthdate,
         alias,

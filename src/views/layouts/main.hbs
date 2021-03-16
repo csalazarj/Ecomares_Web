@@ -4,89 +4,96 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/logo_ecomares.ico ">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/casco ecomares.ico ">
 
     <meta name="description" content="Página del club Ecomares UWR" />
     <meta name="keywords" content="" />
 
     <title>Ecomares UWR</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {{!--
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="/css/fontawesome.min.css">
     <link href="/css/fontawesome.css" rel="stylesheet">
     <link href="/css/brands.css" rel="stylesheet">
     <link href="/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/scss/style.css">
 </head>
 
 <body onload="spacing()">
+    {{!-- <header class="header content">
+        <div class="header-video">
+            <video src="videos/Bubbles.mp4" poster="images/captura1.jpg" autoplay muted loop></video>
+        </div>
 
-    {{>navigation}}
+        <div class="header-overlay"></div>
+    </header> --}}
+    {{>navigation2}}
 
-    <div class="container-fluid mt-5 pt-5">
-        {{>messages}}
-        {{>errors}}
-        {{{body}}}
+    <div>
+
+        {{!-- <div class="header-video">
+            <video src="videos/Bubbles.mp4" poster="images/captura1.jpg" autoplay muted loop></video>
+        </div>
+        <div class="header-overlay"></div> --}}
+        {{!-- <div class="header-content"> --}}
+            {{>messages}}
+            {{>errors}}
+            {{{body}}}
+            {{!-- </div> --}}
+
     </div>
 
 
 
     <!-- FOOTER -->
     <footer class="footer mt-5">
-        {{!-- <p class="mt-2 p-3 text-center bg-secondary text-third">
-            Contamos con licencia de la Seccional de Salud de Antioquia para diseñar, implementar y ejecutar el
-            Sistema de Gestión en Seguridad y Salud en el Trabajo | SG-SST
-        </p> --}}
-        <div class="container-fluid text-white bg-primary text-center">
-            <div class="row">
-                <div class="col-12 col-md-4 mt-3">
-                    <article class="footer-article">
-                        <h3>Visitanos</h3>
-                        {{!-- <p>Carrera 43A # 27A Sur - 86</p>
-                        <p>Centro Ejecutivo La Casona | Of. 115</p>
-                        <p>Envigado - Antioquia, Colombia</p> --}}
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 my-3">
-                    <article class="footer-article">
-                        <h3>Contáctenos</h3>
-                        {{!-- <p>directorcomercial@ghintegral.com.co</p>
-                        <p>Tel. (4) 444 7984</p>
-                        <p>Cel. +57 316 425 3902</p> --}}
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 mb-2 mt-3">
-                    <article class="footer-article">
-                        <h3>Siguenos</h3>
+        <div class="container-fluid text-white bg-dark text-center">
+            <div class="row py-3">
+                <div class="col-lg-6">
+                    {{!-- <article class="footer-article"> --}}
                         <!--Facebook-->
-                        <a href="https://www.facebook.com/ecomaresclub" class="btn-floating btn-lg btn-fb btn-ins text-decoration-none"
-                            type="button" role="button" target="_blank">
-                            <i class="fab fa-facebook text-blue mx-1"></i><span class="text-white ">Facebook</span></a>
+                        <a href="https://www.facebook.com/ecomaresclub"
+                            class=" btn-floating btn-lg btn-fb btn-ins text-decoration-none" type="button"
+                            role="button" target="_blank">
+
+                            <i class="icon fab fa-facebook-square text-blue mx-1 text-third"></i></a>
                         <!--Instagram-->
                         <a href="https://www.instagram.com/ecomaresuwr/"
-                            class="btn-floating btn-lg btn-ins text-secondary text-decoration-none" type="button" role="button" target="_blank">
-                            <i class="fab fa-instagram  mx-1"></i><span class="text-white ">Instagram</span></a>
+                            class=" btn-floating btn-lg btn-ins  text-decoration-none" type="button"
+                            role="button" target="_blank">
+                            <i class="icon fab fa-instagram text-third mx-1"></i></a>
                         <!--Whatsapp-->
-                        {{!-- <a href="https://api.whatsapp.com/send?phone=573164253902"
-                            class="btn-floating btn-lg btn-ins text-white text-decoration-none" type="button" role="button" target="_blank">
-                            <i class="fab fa-whatsapp text-secondary mx-1"></i><span>Whatsapp</span> </a> --}}
+                        <a href="https://api.whatsapp.com/send?phone=573164253902"
+                            class=" btn-floating btn-lg btn-ins text-white text-decoration-none" type="button"
+                            role="button" target="_blank">
+                            <i class="icon fab fa-whatsapp text-third mx-1"></i></a>
 
-                    </article>
+                        {{!--
+                    </article> --}}
+                </div>
+                <div class="col-lg-6 text-white">
+                    <p class="mt-3 fw-bold">© 2021 Ecomares UWR - Todos los derechos reservados</p>
                 </div>
             </div>
         </div>
-        <div class="py-2 text-center text-md-right bg-dark px-3 text-white">
-            <p>© 2020 Ecomares UWR - Todos los derechos reservados</p>
-        </div>
+
     </footer>
 
     <!-- JAVASCRIPT -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    {{!--
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script> --}}
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     <script src="/js/spacing.js"></script>

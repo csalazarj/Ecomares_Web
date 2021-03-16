@@ -41,6 +41,7 @@ app.set("view engine", ".hbs");
 //Middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "secret", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());

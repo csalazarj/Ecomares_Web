@@ -14,12 +14,13 @@
             <div class="col py-4 font-weight-bold">
                 <h4 class="my-2 text-uppercase text-primary text-center">Perfil</h4>
                 <p><span class="text-uppercase text-primary">Nombre: </span>{{name}}</p>
+                <p><span class="text-uppercase text-primary">Número: </span>{{number}}</p>
                 <p><span class="text-uppercase text-primary">Alias: </span>{{alias}}</p>
                 <p><span class="text-uppercase text-primary">Posición: </span>{{positions}}</p>
                 <p><span class="text-uppercase text-primary">Rol: </span> {{role}}</p>
                 <p><span class="text-uppercase text-primary">Categoria: </span>
                     {{current_category}}</p>
-                <p>
+                {{!-- <p>
                     <a class="btn btn-primary" data-toggle="collapse" href="#palmares_{{alias}}" role="button"
                         aria-expanded="false" aria-controls="palmares">
                         Palmarés
@@ -29,7 +30,7 @@
                     <div class="card card-body spacing-text">
                         {{archievements}}
                     </div>
-                </div>
+                </div> --}}
             </div>
             {{#if_equal ../user.role 'admin'}}
             <div class="col-6 ml-auto p-3 d-flex justify-content-end">

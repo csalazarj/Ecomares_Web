@@ -5,6 +5,7 @@ const CategorySchema = new Schema({
   //images: { type: [{ type: String, required: true }], default: [] },
   images: { type: String, required: true },
   description: { type: String, required: true },
+  position: { type: Boolean, default: true },
 });
 
 module.exports = model("Category", CategorySchema);

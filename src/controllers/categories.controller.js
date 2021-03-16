@@ -5,7 +5,7 @@ const Member = require("../models/Member");
 categoriesCtrl.renderCategories = async (req, res) => {
   try {
     const categories = await Category.find().lean();
-    res.render("categories/all-categories", { categories });
+    res.render("categories/all-categories-2", { categories });
   } catch (error) {
     res.send({ status: "ERROR", message: error.message });
   }
@@ -19,7 +19,8 @@ categoriesCtrl.renderOneCategory = async (req, res) => {
       current_category: category.name,
     }).lean();
 
-    res.render("categories/one-category", { category, categories, members });
+    res.render("categories/one-category-2", { category, categories, members });
+    console.log(members);
   } catch (error) {
     res.send({ status: "ERROR", message: error.message });
   }
