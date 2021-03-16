@@ -7,15 +7,40 @@
     </label>
 
     <a href="/"><img width="8%" src="/images/cascoBLANCO.png" alt="logo-portafolio"></a>
-    
+
     <ul>
-        <li><a href="">
+        {{!-- <li><a href="">
                 Rugby Subacuático
             </a>
         </li>
         <li><a href="/user/signup">
                 Registrate
             </a>
+        </li> --}}
+
+        {{#if user}}
+        <li class="nav-item">
+            <a class="nav-link" href="/blog">Reglamento</a>
         </li>
+        {{#if_equal user.role 'admin'}}
+        <li class="nav-item">
+            <a class="nav-link" href="/members/add">Agregar Miembro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/categories/add">Agregar Categoria</a>
+        </li>
+        {{/if_equal}}
+        <li class="nav-item">
+            <a class="nav-link" href="/user/logout">Cerrar Sesión</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link" href="/user/signin">Inciar Sesión</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/user/signup">Regístrate</a>
+        </li>
+        {{/if}}
+
     </ul>
 </nav>
